@@ -11,3 +11,11 @@ jobs:
         run: |
           node -v
           npm -v
+  dependant-job:
+    runs-on: windows-lates
+    needs: [run-shell-command]
+    steps:
+      - name: echo a string
+        run: Write-Output "Windows String"
+      - name: Error Step
+        run: doesnotexists
